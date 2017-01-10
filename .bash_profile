@@ -11,6 +11,7 @@ alias ll='ls -lart'
 alias fol='git push origin --force-with-lease'
 alias rebase='git rebase -i '
 alias soft='git reset --soft HEAD^'
+alias sp='cat ~/.bash_profile'
 function mergeto() { git push origin HEAD:"$1"; }
 # ----------------------
 # Git Aliases
@@ -33,6 +34,8 @@ alias glg='git log --graph --oneline --decorate --all'
 alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
 alias gm='git merge --no-ff'
 alias gp='git pull'
+alias gs='git status'
+alias gsb='git status -sb'
 alias gss='git status -s'
 alias gst='git stash'
 alias gstl='git stash list'
@@ -44,3 +47,9 @@ alias gstd='git stash drop'
 # ----------------------
 # Git log find by commit message
 function glf() { git log --all --grep="$1"; }
+
+# ----------------------
+# Handy shit
+# ----------------------
+alias tab='cd ~/dev/ios/develop/TAB_iOS'
+alias subm='~/bin/git-submodule-commitmsg lib/TABService'
