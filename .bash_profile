@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/bin/sublime:$PATH
 
 if [ -d "$HOME/bin" ] ; then
   PATH=“$PATH:$HOME/bin”
@@ -10,6 +10,7 @@ source ~/.rvm/scripts/rvm
 alias ll='ls -lart'
 alias fol='git push origin --force-with-lease'
 alias rebase='git rebase -i '
+alias rebasea='git rebase --abort'
 alias soft='git reset --soft HEAD^'
 alias sp='cat ~/.bash_profile'
 function mergeto() { git push origin HEAD:"$1"; }
@@ -41,15 +42,21 @@ alias gst='git stash'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gstd='git stash drop'
+alias gsu='git submodule update'
 
 # ----------------------
 # Git Functions
 # ----------------------
 # Git log find by commit message
 function glf() { git log --all --grep="$1"; }
+function gcoa() { gco $1; gp; gsu; }
+function stash() { git add .; git stash; }
 
 # ----------------------
 # Handy shit
 # ----------------------
-alias tab='cd ~/dev/ios/develop/TAB_iOS'
+alias tab='cd ~/dev/TAB_iOS'
 alias subm='~/bin/git-submodule-commitmsg lib/TABService'
+function sublime() { 'open /Applications/Sublime\ Text.app' $1; }
+function bashp() { sublime ~/.bash_profile; }
+
